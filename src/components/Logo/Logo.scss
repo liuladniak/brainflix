@@ -1,0 +1,10 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.header__logo img {
+  max-height: 25px;
+  max-width: 120px;
+
+  @include tablet-breakpoint {
+  }
+}

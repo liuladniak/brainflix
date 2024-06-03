@@ -1,0 +1,31 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.btn {
+  height: 40px;
+  width: 100%;
+  background-color: $color-brainflix-blue;
+  border: none;
+  position: relative;
+  color: $color-white;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.2s ease;
+  border-radius: 1.4rem;
+
+  &:hover {
+    background-color: $color-brainflix-darkblue;
+  }
+
+  & img {
+    position: absolute;
+    top: 50%;
+    left: 1.2rem;
+    transform: translateY(-50%);
+  }
+
+  @include tablet-breakpoint {
+    width: 150px;
+    padding: 0 3.2rem;
+  }
+}
