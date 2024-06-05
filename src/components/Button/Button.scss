@@ -27,5 +27,6 @@
   @include tablet-breakpoint {
     width: 150px;
     padding: 0 3.2rem;
+    order: 1;
   }
 }

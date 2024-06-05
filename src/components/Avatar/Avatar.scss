@@ -2,13 +2,26 @@
 @use "../../styles/partials/mixins" as *;
 
 .avatar {
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  object-fit: cover;
   flex-shrink: 0;
+
+  &__img {
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    cursor: pointer;
+
+    @include tablet-breakpoint {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
   @include tablet-breakpoint {
-    width: 48px;
-    height: 48px;
+    order: 2;
+  }
+
+  @include desktop-breakpoint {
+    padding-left: 1.2rem;
   }
 }

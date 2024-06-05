@@ -7,14 +7,33 @@
   align-items: center;
   padding: 1.6rem;
   gap: 1.6rem;
+  width: 100%;
 
   &-wrp {
     display: flex;
     flex-wrap: wrap;
     gap: 1.6rem;
+
+    @include tablet-breakpoint {
+      gap: 2.4rem;
+    }
   }
 
+  &-user-controls {
+    display: flex;
+
+    @include tablet-breakpoint {
+      gap: 2.4rem;
+    }
+    @include desktop-breakpoint {
+      gap: 3.6rem;
+    }
+  }
   @include tablet-breakpoint {
     flex-direction: row;
+    justify-content: space-between;
+  }
+  @include desktop-breakpoint {
+    width: 1010px;
   }
 }

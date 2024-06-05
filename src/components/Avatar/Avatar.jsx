@@ -2,9 +2,11 @@ import "./Avatar.scss";
 
 function Avatar({ avatarUrl }) {
   return (
-    <>
-      <img className="avatar" src={avatarUrl} alt="User avatar" />
-    </>
+    <div className="avatar">
+      <a href="/">
+        <img className="avatar__img" src={avatarUrl} alt="User avatar" />
+      </a>
+    </div>
   );
 }
 
