@@ -1,0 +1,9 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.video-description {
+  width: 100vw;
+  @include desktop-breakpoint {
+    flex: 2;
+  }
+}

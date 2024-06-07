@@ -21,8 +21,8 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <Video videoData={selectedVideo} />
       <main className="app__main">
+        <Video videoData={selectedVideo} />
         <VideoDetails videoData={selectedVideo} />
         <VideoNav
           videosData={videoDetailsData}
