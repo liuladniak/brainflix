@@ -1,8 +1,37 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-.video-description {
-  width: 100vw;
+.video-desc {
+  width: 100%;
+  border-right: 0.1rem solid red;
+  &__title {
+    margin: 2.4rem 0 1.6rem 0;
+    padding: 0 1.6rem;
+
+    @include tablet-breakpoint {
+      margin: 3.6rem 0 2.4rem 0;
+    }
+  }
+
+  &-wrp {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__stats {
+    display: flex;
+    gap: 2.4rem;
+
+    @include desktop-breakpoint {
+      padding-right: 2.4rem;
+    }
+  }
+  &__views,
+  &__likes {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+  }
+
   @include desktop-breakpoint {
     flex: 2;
   }

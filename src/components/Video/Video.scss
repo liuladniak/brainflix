@@ -1,2 +1,11 @@
-.video__img {
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.video {
+  width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+
+  &-section {
+  }
 }

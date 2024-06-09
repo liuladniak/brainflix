@@ -1,9 +1,14 @@
+import "./Video.scss";
+
 function Video({ videoData }) {
-  const { image, title } = videoData;
+  const { image } = videoData;
 
   return (
-    <section>
-      <img className="video__img" src={image} alt={title} />
+    <section className="video-section">
+      <video className="video" controls poster={image}>
+        <source src="dummy-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
     </section>
   );
 }

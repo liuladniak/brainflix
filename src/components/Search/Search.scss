@@ -12,9 +12,6 @@
     background-repeat: no-repeat;
     background-position: 1.2rem;
     border: 0.1rem solid $color-mercury;
-    outline: 0.1rem solid transparent;
-    outline-offset: 0.1rem;
-    outline-offset: 0.1rem;
     border-radius: 0.4rem;
     padding: 1.2rem 1.2rem 1.2rem 4.4rem;
 
@@ -22,8 +19,8 @@
       color: $color-brainflix-black;
     }
     &:focus {
-      border: 0.2rem solid $color-brainflix-blue;
-      outline: none;
+      border: 0.1rem solid transparent;
+      outline: 0.2rem solid $color-brainflix-blue;
     }
 
     @include tablet-breakpoint {

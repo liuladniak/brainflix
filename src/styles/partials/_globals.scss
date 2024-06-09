@@ -15,7 +15,8 @@ a {
 ul {
   list-style: none;
 }
-img {
+img,
+video {
   display: block;
   max-width: 100%;
 }
@@ -31,12 +32,11 @@ h6 {
 
 /* Common styles */
 html {
-  font-size: 62.5%;
   scroll-behavior: smooth;
 }
 
 body {
-  font-size: 1.6em;
+  font-size: 10px;
   font-family: "Avenir Next";
 
   @include desktop-breakpoint {
