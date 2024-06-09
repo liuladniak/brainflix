@@ -1,5 +1,25 @@
 @use "../../styles/partials/variables" as *;
 
+/* ************************** */
+/* STYLE MIXINS*/
+/* ************************** */
+
+@mixin padding($padding) {
+  padding: $padding;
+}
+@mixin font($f-s, $l-h) {
+  font-size: $f-s;
+  line-height: $l-h;
+}
+@mixin heading-style($f-s, $l-h, $padding) {
+  @include font($f-s, $l-h);
+  @include padding($padding);
+}
+
+/* ************************** */
+/* MEDIA MIXINS*/
+/* ************************** */
+
 //Tablet breakpoint from 768px to 1279px:
 @mixin tablet-breakpoint {
   @media screen and (min-width: $tablet-breakpoint) {

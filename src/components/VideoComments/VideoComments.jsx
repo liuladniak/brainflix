@@ -1,11 +1,12 @@
 import CommentsForm from "../CommentsForm/CommentsForm";
-import VideoComment from "../VideoComment/VideoComment";
+import CommentsList from "../CommentsList/CommentsList";
 
 function VideoComments() {
   return (
     <div>
+      <h2 className="comments__heading">Join the Conversation</h2>
       <CommentsForm />
-      <VideoComment />
+      <CommentsList />
     </div>
   );
 }

@@ -1,0 +1,157 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.comments {
+  padding: 0 1.6rem;
+
+  &__heading {
+    font-weight: 700;
+    // @include heading-style($font-heading-sm, $lh-heading-sm, $padding-sm);
+    @include tablet-breakpoint {
+      // @include heading-style($font-heading-lg, $lh-heading-lg, $padding-md);
+    }
+    @include tablet-breakpoint {
+      // @include heading-style($font-heading-lg, $lh-heading-lg, $padding-lg);
+    }
+  }
+  &-wrp {
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    @include font(1.4rem, 2.2rem);
+  }
+
+  &--posted {
+    @include desktop-breakpoint {
+      width: 500px;
+    }
+  }
+  @include tablet-breakpoint {
+    padding: 0 3.6rem;
+  }
+  @include desktop-breakpoint {
+    padding: 0 12.8rem;
+  }
+}
+
+.btn-cta--bio {
+  width: calc(100% - 4.4rem);
+  @include tablet-breakpoint {
+    width: calc(100% - 6.4rem);
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  @include font(1.4rem, 2.2rem);
+  border-bottom: 0.1rem solid $color-mercury;
+
+  &__user-wrp {
+    margin-bottom: 1.6rem;
+  }
+  &__user {
+    flex-shrink: 0;
+    display: flex;
+    gap: 1.2rem;
+    &-img {
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      object-fit: cover;
+      background-color: $color-mercury;
+      flex-shrink: 0;
+      @include tablet-breakpoint {
+        width: 48px;
+        height: 48px;
+      }
+    }
+    &-comment {
+      width: 100%;
+    }
+    @include tablet-breakpoint {
+      gap: 1.6rem;
+    }
+  }
+  &__label {
+    text-transform: uppercase;
+    color: $color-silver;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+
+    &--name {
+      margin-left: 4.4rem;
+      @include tablet-breakpoint {
+        margin-left: 6.4rem;
+      }
+    }
+
+    @include tablet-breakpoint {
+      @include font(1.4rem, 2rem);
+    }
+  }
+  &__field {
+    min-height: 36px;
+    width: 100%;
+    border-radius: 0.4rem;
+    padding: 1.2rem;
+    border: 0.1rem solid $color-mercury;
+    transition: all 0.2s ease;
+
+    &::placeholder {
+      color: $color-brainflix-black;
+    }
+
+    &:focus {
+      outline: none;
+      border: 0.1rem solid $color-brainflix-black;
+    }
+
+    @include tablet-breakpoint {
+      min-height: 48px;
+      padding: 1.6rem;
+    }
+  }
+  &__content {
+    margin-left: 4.4rem;
+    @include tablet-breakpoint {
+      margin-left: 6.4rem;
+    }
+  }
+
+  @include desktop-breakpoint {
+    width: 500px;
+  }
+}
+
+#comment {
+  min-height: 95px;
+}
+
+.comment {
+  &__card {
+    display: flex;
+    padding: 1.6rem 0;
+    border-bottom: 0.1rem solid $color-mercury;
+    gap: 1.6rem;
+    @include tablet-breakpoint {
+      padding: 2.4rem 0;
+    }
+  }
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    &-name {
+      font-weight: 600;
+    }
+    &-date {
+      color: $color-silver;
+      font-weight: 400;
+    }
+  }
+}
