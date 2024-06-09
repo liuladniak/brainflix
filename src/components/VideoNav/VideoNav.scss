@@ -2,7 +2,9 @@
 @use "../../styles/partials/mixins" as *;
 
 .video-nav {
-  width: 100vw;
+  width: 100%;
+  max-width: 1010px;
+
   @include desktop-breakpoint {
     flex: 1;
     max-width: 330px;

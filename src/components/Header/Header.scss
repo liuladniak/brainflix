@@ -8,12 +8,14 @@
   padding: 1.2rem 1.6rem 1.6rem 1.6rem;
   gap: 1.6rem;
   width: 100%;
+  max-width: 1010px;
 
   &-wrp {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: 1.6rem;
+    width: 100%;
 
     @include tablet-breakpoint {
       gap: 2.4rem;

@@ -1,0 +1,84 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  @include font(1.4rem, 2.2rem);
+
+  &__user-wrp {
+    margin-bottom: 1.6rem;
+  }
+  &__user {
+    flex-shrink: 0;
+    display: flex;
+    gap: 1.2rem;
+    &-img {
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      object-fit: cover;
+      background-color: $color-mercury;
+      flex-shrink: 0;
+      @include tablet-breakpoint {
+        width: 48px;
+        height: 48px;
+      }
+    }
+    &-comment {
+      width: 100%;
+    }
+    @include tablet-breakpoint {
+      gap: 1.6rem;
+    }
+  }
+  &__label {
+    text-transform: uppercase;
+    color: $color-silver;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    padding-left: 4.8rem;
+
+    @include tablet-breakpoint {
+      @include font(1.4rem, 2rem);
+      padding-left: 5.2rem;
+    }
+  }
+  &__field {
+    min-height: 36px;
+    width: 100%;
+    border-radius: 0.4rem;
+    padding: 1.2rem;
+    border: 0.1rem solid $color-mercury;
+    transition: all 0.2s ease;
+
+    &::placeholder {
+      color: $color-brainflix-black;
+    }
+
+    &:focus {
+      outline: none;
+      border: 0.1rem solid $color-brainflix-black;
+    }
+
+    @include tablet-breakpoint {
+      min-height: 48px;
+      padding: 1.6rem;
+    }
+  }
+  &__content {
+    margin-left: 4.4rem;
+    @include tablet-breakpoint {
+      margin-left: 6.4rem;
+    }
+  }
+
+  @include desktop-breakpoint {
+    width: 500px;
+  }
+}
+
+#comment {
+  min-height: 95px;
+}

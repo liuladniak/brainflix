@@ -6,7 +6,7 @@ function VideoDetails({ videoData }) {
   return (
     <section className="video-details">
       <VideoDescription videoData={videoData} />
-      <VideoComments />
+      <VideoComments videoData={videoData} />
     </section>
   );
 }

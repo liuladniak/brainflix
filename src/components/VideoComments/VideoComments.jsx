@@ -1,13 +1,18 @@
 import CommentsForm from "../CommentsForm/CommentsForm";
 import CommentsList from "../CommentsList/CommentsList";
+import "./VideoComments.scss";
 
-function VideoComments() {
+function VideoComments({ videoData }) {
+  const commentsNr = videoData.comments.length;
+
   return (
-    <div>
-      <h2 className="comments__heading">Join the Conversation</h2>
-      <CommentsForm />
-      <CommentsList />
-    </div>
+    <article className="comments">
+      <h3 className="comments__heading">{commentsNr}comments</h3>
+      <div className="comments-wrp">
+        <CommentsForm />
+        <CommentsList />
+      </div>
+    </article>
   );
 }
 

@@ -1,0 +1,23 @@
+.comment {
+  &__card {
+    display: flex;
+    padding: 1.6rem 0;
+    border-bottom: 0.1rem solid $color-mercury;
+    gap: 1.6rem;
+    @include tablet-breakpoint {
+      padding: 2.4rem 0;
+    }
+  }
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    &-name {
+      font-weight: 600;
+    }
+    &-date {
+      color: $color-silver;
+      font-weight: 400;
+    }
+  }
+}

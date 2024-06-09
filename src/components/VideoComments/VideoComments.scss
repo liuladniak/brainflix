@@ -1,0 +1,35 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.comments {
+  padding: 0 1.6rem;
+
+  &__heading {
+    font-weight: 700;
+
+    @include heading-style($font-body-sm, $lh-body-sm, $padding-md 0);
+    @include tablet-breakpoint {
+      // @include heading-style($font-heading-lg, $lh-heading-lg, $padding-md);
+    }
+    @include tablet-breakpoint {
+      // @include heading-style($font-heading-lg, $lh-heading-lg, $padding-lg);
+    }
+  }
+
+  &-wrp {
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    @include font(1.4rem, 2.2rem);
+  }
+
+  @include tablet-breakpoint {
+    padding: 0 3.6rem;
+  }
+  @include desktop-breakpoint {
+    padding: 0 12.8rem;
+  }
+}

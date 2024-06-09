@@ -3,10 +3,16 @@
 
 .video-desc {
   width: 100%;
-  border-right: 0.1rem solid red;
+  max-width: 1010px;
+  padding: 0 1.6rem;
+
   &__title {
-    margin: 2.4rem 0 1.6rem 0;
-    padding: 0 1.6rem;
+    @include heading-style(
+      $font-heading-lg-m,
+      $lh-heading-lg-m,
+      $padding-heading-sm
+    );
+    border-bottom: 0.1rem solid $color-mercury;
 
     @include tablet-breakpoint {
       margin: 3.6rem 0 2.4rem 0;
@@ -15,21 +21,67 @@
 
   &-wrp {
     display: flex;
-    justify-content: space-between;
+    padding: $padding-sm 0;
+    justify-content: flex-start;
+    gap: 3rem;
+
+    @include tablet-breakpoint {
+      justify-content: space-between;
+      gap: 0;
+    }
   }
+  &__channel,
   &__stats {
     display: flex;
-    gap: 2.4rem;
+    flex-direction: column;
+    gap: 1.6rem;
 
-    @include desktop-breakpoint {
+    @include tablet-breakpoint {
+      flex-direction: row;
+    }
+  }
+
+  &__stats {
+    @include tablet-breakpoint {
+      gap: 2.4rem;
       padding-right: 2.4rem;
     }
   }
+  &__channel {
+    &-name {
+      font-weight: 600;
+      @include font($font-body-sm, $lh-body-sm);
+    }
+
+    &-date {
+      @include font($font-heading-sm, $lh-heading-sm);
+    }
+
+    @include tablet-breakpoint {
+      gap: 3.5rem;
+    }
+  }
+
+  &__views,
+  &__likes,
+  &__channel-date {
+    color: $color-silver;
+    @include font($font-heading-sm, $lh-heading-sm);
+  }
+
   &__views,
   &__likes {
     display: flex;
     gap: 0.8rem;
     align-items: center;
+  }
+
+  &__content {
+    @include font($font-body-sm, $lh-body-sm);
+  }
+
+  @include tablet-breakpoint {
+    border-right: 0.1rem solid red;
   }
 
   @include desktop-breakpoint {

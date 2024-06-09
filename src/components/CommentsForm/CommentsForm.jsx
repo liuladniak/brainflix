@@ -1,46 +1,33 @@
+import "./CommentsForm.scss";
+import commentIcon from "../../assets/icons/add_comment.svg";
+import Button from "../Button/Button";
+import avatarIcon from "../../assets/images/Mohan-muruge.jpg";
+import Avatar from "../Avatar/Avatar";
+
 function CommentsForm() {
   return (
     <form action="" method="post" className="form">
       <div className="form__user-wrp">
-        <label
-          id="name-label"
-          className="form__label form__label--name"
-          htmlFor="name"
-        >
-          Name
+        <label className="form__label" htmlFor="comment">
+          Join the Conversation
         </label>
         <div className="form__user">
-          <img
-            className="form__user-img"
-            src="./assets/images/Mohan-muruge.jpg"
-            alt="user image"
-          />
-          <input
-            className="form__field"
+          <Avatar avatarUrl={avatarIcon} />
+
+          <textarea
+            className="form__field form__field--comment"
             type="text"
-            name="name"
-            id="name"
-            placeholder="Enter your name"
+            name="comment"
+            id="comment"
+            placeholder="Add a new comment"
             required
-          />
+          ></textarea>
         </div>
       </div>
-      <div className="form__content">
-        <label className="form__label" htmlFor="comment">
-          Comment
-        </label>
-        <textarea
-          className="form__field form__field--comment"
-          type="text"
-          name="comment"
-          id="comment"
-          placeholder="Add a new comment"
-          required
-        ></textarea>
-      </div>
-      <button type="submit" className="btn-cta btn-cta--bio">
+
+      <Button type="submit" iconUrl={commentIcon}>
         Comment
-      </button>
+      </Button>
     </form>
   );
 }

@@ -6,12 +6,12 @@ function VideoDescription({ videoData }) {
   const { description, title, channel, timestamp, views, likes } = videoData;
 
   return (
-    <div className="video-desc">
+    <article className="video-desc">
       <h1 className="video-desc__title">{title}</h1>
       <div className="video-desc-wrp">
         <div className="video-desc__channel">
-          <span>By {channel}</span>
-          <span>{timestamp}</span>
+          <span className="video-desc__channel-name">By {channel}</span>
+          <span className="video-desc__channel-date">{timestamp}</span>
         </div>
         <div className="video-desc__stats">
           <div className="video-desc__views">
@@ -25,8 +25,8 @@ function VideoDescription({ videoData }) {
         </div>
       </div>
 
-      <p>{description}</p>
-    </div>
+      <p className="video-desc__content">{description}</p>
+    </article>
   );
 }
 

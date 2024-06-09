@@ -32,11 +32,11 @@ h6 {
 
 /* Common styles */
 html {
+  font-size: 10px;
   scroll-behavior: smooth;
 }
 
 body {
-  font-size: 10px;
   font-family: "Avenir Next";
 
   @include desktop-breakpoint {
