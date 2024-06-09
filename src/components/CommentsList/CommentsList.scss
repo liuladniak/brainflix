@@ -39,6 +39,7 @@
 
 .btn-cta--bio {
   width: calc(100% - 4.4rem);
+
   @include tablet-breakpoint {
     width: calc(100% - 6.4rem);
   }
