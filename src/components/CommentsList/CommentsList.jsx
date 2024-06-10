@@ -4,8 +4,6 @@ import "./CommentsList.scss";
 function CommentsList({ videoData }) {
   const commentsList = videoData.comments;
 
-  console.log(commentsList);
-
   return (
     <ul className="comments--posted">
       {commentsList.map((comment, i) => {

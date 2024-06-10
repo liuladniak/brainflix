@@ -19,6 +19,7 @@ img,
 video {
   display: block;
   max-width: 100%;
+  object-fit: cover;
 }
 p,
 h1,
@@ -38,6 +39,9 @@ html {
 
 body {
   font-family: "Avenir Next";
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   @include desktop-breakpoint {
     display: flex;

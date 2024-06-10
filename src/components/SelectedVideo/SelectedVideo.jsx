@@ -2,7 +2,6 @@ import Video from "../Video/Video";
 import "./SelectedVideo.scss";
 
 function SelectedVideo({ videoData }) {
-  console.log("SelectedVideo:", videoData);
   return (
     <section className="video-section">
       <Video

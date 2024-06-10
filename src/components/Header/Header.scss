@@ -1,8 +1,6 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-// @use "../../styles/partials/globals" as *;
-
 .header {
   display: flex;
   flex-direction: column;
@@ -19,8 +17,8 @@
     width: 100%;
 
     @include tablet-breakpoint {
-      gap: 2.4rem;
       justify-content: flex-end;
+      gap: 2.4rem;
     }
   }
 
@@ -34,11 +32,13 @@
       gap: 3.6rem;
     }
   }
+
   @include tablet-breakpoint {
     flex-direction: row;
     justify-content: space-between;
     padding: $padding-sm $padding-lg;
   }
+
   @include desktop-breakpoint {
     max-width: 1010px;
     width: 1010px;

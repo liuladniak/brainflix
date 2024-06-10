@@ -6,12 +6,13 @@
 
   &__heading {
     font-weight: 700;
-
     @include heading-style($font-body-sm, $lh-body-sm, $padding-md 0);
+
     @include tablet-breakpoint {
       padding: 0 0 $padding-md;
       @include font($font-body-md, $lh-body-md);
     }
+
     @include desktop-breakpoint {
       max-width: 700px;
       width: 100%;
@@ -37,6 +38,7 @@
   @include tablet-breakpoint {
     padding: 0 $padding-lg;
   }
+
   @include desktop-breakpoint {
     display: flex;
     flex-direction: column;

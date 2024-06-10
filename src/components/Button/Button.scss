@@ -2,19 +2,19 @@
 @use "../../styles/partials/mixins" as *;
 
 .btn {
-  height: 40px;
-  width: 100%;
-  background-color: $color-brainflix-blue;
-  border: none;
   position: relative;
-  color: $color-white;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: 0.2s ease;
-  border-radius: 0.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 40px;
+  width: 100%;
+  background-color: $color-brainflix-blue;
+  color: $color-white;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0.4rem;
+  transition: 0.2s ease;
+  cursor: pointer;
 
   &:hover {
     background-color: $color-brainflix-darkblue;
@@ -30,9 +30,8 @@
   @include tablet-breakpoint {
     min-width: 155px;
     max-width: 200px;
-
+    flex-shrink: 0;
     padding: 0 3.2rem;
     order: 1;
-    flex-shrink: 0;
   }
 }

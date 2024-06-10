@@ -3,17 +3,11 @@
 
 .comment {
   &__avatar {
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    object-fit: cover;
     background-color: $color-mercury;
     flex-shrink: 0;
-    @include tablet-breakpoint {
-      width: 48px;
-      height: 48px;
-    }
+    @include avatar;
   }
+
   &-wrp {
     width: 100%;
     @include font($font-body-sm, $lh-body-sm);
@@ -21,18 +15,21 @@
     @include tablet-breakpoint {
       @include font($font-body-md, $lh-body-md);
     }
+
     @include desktop-breakpoint {
-      padding-right: 2.4rem;
+      padding-right: $padding-md;
     }
   }
   &__card {
     display: flex;
-    padding: 1.6rem 0;
+    padding: $padding-sm 0;
     border-bottom: 0.1rem solid $color-mercury;
     gap: 1.6rem;
+
     @include tablet-breakpoint {
-      padding: 2.4rem 0;
+      padding: $padding-md 0;
     }
+
     &:last-child {
       border-bottom: none;
     }
@@ -41,9 +38,11 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 0.8rem;
+
     &-name {
       font-weight: 600;
     }
+
     &-date {
       color: $color-silver;
       font-weight: 400;

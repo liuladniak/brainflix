@@ -1,11 +1,16 @@
 import "./CommentCard.scss";
 import formatDate from "../../utils.js";
+import Avatar from "../Avatar/Avatar.jsx";
 
 function CommentCard({ comment }) {
-  console.log("COMMENTS:", comment);
   return (
     <li className="comment__card">
-      <div className="comment__avatar"></div>
+      {comment.image ? (
+        <Avatar avatarUrl={comment.image} />
+      ) : (
+        <div className="comment__avatar avatar__img"></div>
+      )}
+
       <div className="comment-wrp">
         <div className="comment__heading">
           <h4 className="comment__heading-name">{comment.name}</h4>

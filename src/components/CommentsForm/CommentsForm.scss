@@ -5,13 +5,14 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  @include font(1.4rem, 2.2rem);
+  @include font($font-body-md, $lh-body-md);
 
-  &__user-wrp {
+  &-wrp {
     width: 100%;
     margin-bottom: 1.6rem;
   }
-  &__user {
+
+  &__comment {
     flex-shrink: 0;
     display: flex;
     gap: 1.2rem;
@@ -20,6 +21,7 @@
       gap: 1.8rem;
     }
   }
+
   &__label {
     @include font($font-heading-sm, $lh-heading-md);
     text-transform: uppercase;
@@ -39,6 +41,7 @@
     padding: 1.2rem;
     border: 0.1rem solid $color-mercury;
     transition: all 0.2s ease;
+    overflow: hidden;
 
     &::placeholder {
       color: $color-brainflix-black;
@@ -56,8 +59,10 @@
       align-items: center;
     }
   }
+
   &__content {
     margin-left: 4.4rem;
+
     @include tablet-breakpoint {
       margin-left: 6.4rem;
     }
@@ -69,9 +74,10 @@
     gap: 2.4rem;
     border-bottom: 0.1rem solid $color-mercury;
   }
+
   @include desktop-breakpoint {
     max-width: 700px;
     width: 100%;
-    padding-right: 2.4rem;
+    padding-right: $padding-md;
   }
 }
