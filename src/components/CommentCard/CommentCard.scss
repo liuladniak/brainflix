@@ -30,10 +30,13 @@
       padding: $padding-md 0;
     }
 
-    &:last-child {
-      border-bottom: none;
+    @include desktop-breakpoint {
+      &:last-child {
+        border-bottom: none;
+      }
     }
   }
+
   &__heading {
     display: flex;
     justify-content: space-between;
