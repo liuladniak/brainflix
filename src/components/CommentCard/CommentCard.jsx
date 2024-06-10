@@ -1,4 +1,5 @@
 import "./CommentCard.scss";
+import formatDate from "../../utils.js";
 
 function CommentCard({ comment }) {
   console.log("COMMENTS:", comment);
@@ -8,7 +9,9 @@ function CommentCard({ comment }) {
       <div className="comment-wrp">
         <div className="comment__heading">
           <h4 className="comment__heading-name">{comment.name}</h4>
-          <span className="comment__heading-date">{comment.timestamp}</span>
+          <span className="comment__heading-date">
+            {formatDate(comment.timestamp)}
+          </span>
         </div>
         <p className="comment__content">{comment.comment}</p>
       </div>

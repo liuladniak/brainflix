@@ -10,26 +10,32 @@ import SelectedVideo from "./components/SelectedVideo/SelectedVideo";
 function App() {
   const [selectedVideo, setSelectedVideo] = useState(videoDetailsData[0]);
   const [nextVideos, setNextVideos] = useState(videoDetailsData.slice(1));
+
   const selectVideo = (videoId) => {
-    const videoToSelect = videoDetailsData.find((video) => {
-      return video.id === videoId;
-    });
-    setSelectedVideo(videoToSelect);
-    setNextVideos(nextVideos.filter((v) => v.id !== videoId));
+    const videoToSelect = videoDetailsData.find(
+      (video) => video.id === videoId
+    );
+
+    if (videoToSelect.id !== selectedVideo.id) {
+      const updatedNextVideos = nextVideos
+        .filter((v) => v.id !== videoId)
+        .concat(selectedVideo);
+
+      setSelectedVideo(videoToSelect);
+      setNextVideos(updatedNextVideos);
+    }
   };
 
   return (
     <div className="app">
       <Header />
       <SelectedVideo videoData={selectedVideo} />
-      {/* <section className="app-details"> */}
       <VideoDetails videoData={selectedVideo} />
       <VideoNav
         videosData={nextVideos}
         onSelectVideo={selectVideo}
         selectedVideoId={selectedVideo.id}
       />
-      {/* </section> */}
     </div>
   );
 }
