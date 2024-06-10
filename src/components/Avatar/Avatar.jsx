@@ -1,11 +1,9 @@
 import "./Avatar.scss";
 
-function Avatar({ avatarUrl }) {
+function Avatar({ avatarUrl, className = "" }) {
   return (
-    <div className="avatar">
-      <a href="/">
-        <img className="avatar__img" src={avatarUrl} alt="User avatar" />
-      </a>
+    <div className={`avatar ${className}`}>
+      <img className="avatar__img" src={avatarUrl} alt="User avatar" />
     </div>
   );
 }

@@ -3,8 +3,7 @@
 
 .video-desc {
   width: 100%;
-  max-width: 1010px;
-  padding: 0 1.6rem;
+  padding: 0 $padding-sm;
 
   &__title {
     @include heading-style(
@@ -12,22 +11,35 @@
       $lh-heading-lg-m,
       $padding-heading-sm
     );
-    border-bottom: 0.1rem solid $color-mercury;
 
     @include tablet-breakpoint {
-      margin: 3.6rem 0 2.4rem 0;
+      @include heading-style(
+        $font-heading-lg-d,
+        $lh-heading-lg-d,
+        $padding-heading-lg
+      );
+    }
+    @include desktop-breakpoint {
+      max-width: 700px;
+      width: 100%;
     }
   }
 
   &-wrp {
     display: flex;
-    padding: $padding-sm 0;
+    padding: 0 0 1.2rem;
     justify-content: flex-start;
     gap: 3rem;
 
     @include tablet-breakpoint {
+      padding-bottom: 1.2rem;
       justify-content: space-between;
       gap: 0;
+      border-bottom: 0.1rem solid $color-mercury;
+    }
+    @include desktop-breakpoint {
+      max-width: 700px;
+      width: 100%;
     }
   }
   &__channel,
@@ -44,17 +56,28 @@
   &__stats {
     @include tablet-breakpoint {
       gap: 2.4rem;
+      @include font($font-body-md, $lh-body-md);
+    }
+    @include desktop-breakpoint {
       padding-right: 2.4rem;
     }
   }
   &__channel {
     &-name {
-      font-weight: 600;
+      font-weight: 700;
       @include font($font-body-sm, $lh-body-sm);
+
+      @include tablet-breakpoint {
+        @include font($font-body-md, $lh-body-md);
+      }
     }
 
     &-date {
       @include font($font-heading-sm, $lh-heading-sm);
+
+      @include tablet-breakpoint {
+        @include font($font-body-md, $lh-body-md);
+      }
     }
 
     @include tablet-breakpoint {
@@ -78,13 +101,26 @@
 
   &__content {
     @include font($font-body-sm, $lh-body-sm);
+
+    @include tablet-breakpoint {
+      padding: 3rem 0;
+    }
+    @include desktop-breakpoint {
+      max-width: 700px;
+    }
   }
 
   @include tablet-breakpoint {
-    border-right: 0.1rem solid red;
+    @include font($font-heading-lg-d, $lh-heading-lg-d);
+    padding: 0 $padding-lg;
   }
 
   @include desktop-breakpoint {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
     flex: 2;
+    padding: 0;
   }
 }

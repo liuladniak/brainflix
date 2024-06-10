@@ -1,13 +1,14 @@
-import VideoNavItem from "../VideoNavItem/VideoNavItem";
+import VideoCard from "../VideoCard/VideoCard";
 import "./VideoNav.scss";
 
 function VideoNav({ onSelectVideo, videosData, selectedVideoId }) {
   return (
     <nav className="video-nav">
-      <ul className="video-nav-list">
+      <h2 className="video-nav__title">Next video</h2>
+      <ul className="video-nav__list">
         {videosData.map((video) => {
           return (
-            <VideoNavItem
+            <VideoCard
               key={video.id}
               video={video}
               onSelectVideo={onSelectVideo}

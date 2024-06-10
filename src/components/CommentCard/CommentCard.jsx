@@ -1,5 +1,19 @@
-function CommentCard() {
-  return <div>CommentCard</div>;
+import "./CommentCard.scss";
+
+function CommentCard({ comment }) {
+  console.log("COMMENTS:", comment);
+  return (
+    <div className="comment__card">
+      <div className="comment__avatar"></div>
+      <div className="comment-wrp">
+        <div className="comment__heading">
+          <h4 className="comment__heading-name">{comment.name}</h4>
+          <span className="comment__heading-date">{comment.timestamp}</span>
+        </div>
+        <p className="comment__content">{comment.comment}</p>
+      </div>
+    </div>
+  );
 }
 
 export default CommentCard;

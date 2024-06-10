@@ -12,7 +12,7 @@ function Header() {
       <Logo />
       <div className="header-wrp">
         <Search />
-        <Avatar avatarUrl={avatarIcon} />
+        <Avatar avatarUrl={avatarIcon} className="avatar-position" />
         <Button iconUrl={uploadIcon}>Upload</Button>
       </div>
     </header>

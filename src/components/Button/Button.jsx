@@ -2,9 +2,9 @@ import "./Button.scss";
 
 function Button({ children, iconUrl }) {
   return (
-    <button className="btn header__btn">
+    <button className="btn">
       <img src={iconUrl} alt="Upload button icon" />
-      {children}
+      <span>{children}</span>
     </button>
   );
 }

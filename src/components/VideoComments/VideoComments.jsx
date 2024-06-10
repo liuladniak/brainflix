@@ -10,7 +10,7 @@ function VideoComments({ videoData }) {
       <h3 className="comments__heading">{commentsNr}comments</h3>
       <div className="comments-wrp">
         <CommentsForm />
-        <CommentsList />
+        <CommentsList videoData={videoData} />
       </div>
     </article>
   );

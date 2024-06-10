@@ -1,11 +1,11 @@
 import { useState } from "react";
 import videoDetailsData from "./data/video-details.json";
 import "./App.scss";
-
+import "./styles/partials/_globals.scss";
 import Header from "./components/Header/Header";
 import VideoNav from "./components/VideoNav/VideoNav";
 import VideoDetails from "./components/VideoDetails/VideoDetails";
-import Video from "./components/Video/Video";
+import SelectedVideo from "./components/SelectedVideo/SelectedVideo";
 
 function App() {
   const [selectedVideo, setSelectedVideo] = useState(videoDetailsData[0]);
@@ -21,13 +21,15 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <Video videoData={selectedVideo} />
+      <SelectedVideo videoData={selectedVideo} />
+      {/* <section className="app-details"> */}
       <VideoDetails videoData={selectedVideo} />
       <VideoNav
         videosData={nextVideos}
         onSelectVideo={selectVideo}
         selectedVideoId={selectedVideo.id}
       />
+      {/* </section> */}
     </div>
   );
 }

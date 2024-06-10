@@ -1,6 +1,10 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
 .video-details {
   flex: 1;
-  &__img {
-    width: 32rem;
+
+  @include desktop-breakpoint {
+    flex: none;
   }
 }

@@ -8,32 +8,20 @@
   @include font(1.4rem, 2.2rem);
 
   &__user-wrp {
+    width: 100%;
     margin-bottom: 1.6rem;
   }
   &__user {
     flex-shrink: 0;
     display: flex;
     gap: 1.2rem;
-    &-img {
-      border-radius: 50%;
-      width: 36px;
-      height: 36px;
-      object-fit: cover;
-      background-color: $color-mercury;
-      flex-shrink: 0;
-      @include tablet-breakpoint {
-        width: 48px;
-        height: 48px;
-      }
-    }
-    &-comment {
-      width: 100%;
-    }
+
     @include tablet-breakpoint {
-      gap: 1.6rem;
+      gap: 1.8rem;
     }
   }
   &__label {
+    @include font($font-heading-sm, $lh-heading-md);
     text-transform: uppercase;
     color: $color-silver;
     font-weight: 600;
@@ -41,12 +29,11 @@
     padding-left: 4.8rem;
 
     @include tablet-breakpoint {
-      @include font(1.4rem, 2rem);
       padding-left: 5.2rem;
     }
   }
   &__field {
-    min-height: 36px;
+    height: 95px;
     width: 100%;
     border-radius: 0.4rem;
     padding: 1.2rem;
@@ -55,6 +42,7 @@
 
     &::placeholder {
       color: $color-brainflix-black;
+      transform: translateY(-0.1rem);
     }
 
     &:focus {
@@ -63,8 +51,9 @@
     }
 
     @include tablet-breakpoint {
-      min-height: 48px;
-      padding: 1.6rem;
+      height: 40px;
+      display: flex;
+      align-items: center;
     }
   }
   &__content {
@@ -74,11 +63,15 @@
     }
   }
 
-  @include desktop-breakpoint {
-    width: 500px;
+  @include tablet-breakpoint {
+    flex-direction: row;
+    align-items: center;
+    gap: 2.4rem;
+    border-bottom: 0.1rem solid $color-mercury;
   }
-}
-
-#comment {
-  min-height: 95px;
+  @include desktop-breakpoint {
+    max-width: 700px;
+    width: 100%;
+    padding-right: 2.4rem;
+  }
 }

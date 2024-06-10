@@ -1,0 +1,9 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.video-section {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: $color-brainflix-darkblack;
+}

@@ -3,10 +3,40 @@
 
 .video-nav {
   width: 100%;
-  max-width: 1010px;
+  padding: 0 $padding-sm $padding-sm;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+
+    @include tablet-breakpoint {
+      gap: 2.4rem;
+    }
+  }
+
+  &__title {
+    @include font($font-heading-sm, $lh-heading-md);
+    color: $color-silver;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: $padding-sm 0;
+
+    @include tablet-breakpoint {
+      padding: $padding-lg 0 $padding-sm 0;
+    }
+  }
+
+  @include tablet-breakpoint {
+    padding: 0 $padding-md $padding-md;
+    max-width: 310px;
+  }
 
   @include desktop-breakpoint {
+    border-left: 0.1rem solid $color-mercury;
+
     flex: 1;
+    padding: 0 $padding-lg $padding-lg;
     max-width: 330px;
   }
 }

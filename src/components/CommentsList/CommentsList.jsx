@@ -1,10 +1,16 @@
 import CommentCard from "../CommentCard/CommentCard";
 import "./CommentsList.scss";
 
-function CommentsList() {
+function CommentsList({ videoData }) {
+  const commentsList = videoData.comments;
+
+  console.log(commentsList);
+
   return (
     <div className="comments--posted">
-      <CommentCard />
+      {commentsList.map((comment, i) => {
+        return <CommentCard comment={commentsList[i]} key={i} />;
+      })}
     </div>
   );
 }

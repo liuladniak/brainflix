@@ -2,17 +2,19 @@
 @use "../../styles/partials/mixins" as *;
 
 .comments {
-  padding: 0 1.6rem;
+  padding: 0 $padding-sm;
 
   &__heading {
     font-weight: 700;
 
     @include heading-style($font-body-sm, $lh-body-sm, $padding-md 0);
     @include tablet-breakpoint {
-      // @include heading-style($font-heading-lg, $lh-heading-lg, $padding-md);
+      padding: 0 0 $padding-md;
+      @include font($font-body-md, $lh-body-md);
     }
-    @include tablet-breakpoint {
-      // @include heading-style($font-heading-lg, $lh-heading-lg, $padding-lg);
+    @include desktop-breakpoint {
+      max-width: 700px;
+      width: 100%;
     }
   }
 
@@ -23,13 +25,22 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    @include font(1.4rem, 2.2rem);
+    @include font($font-body-md, $lh-body-md);
+
+    @include desktop-breakpoint {
+      align-items: flex-start;
+      max-width: 700px;
+      width: 100%;
+    }
   }
 
   @include tablet-breakpoint {
-    padding: 0 3.6rem;
+    padding: 0 $padding-lg;
   }
   @include desktop-breakpoint {
-    padding: 0 12.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0;
   }
 }
