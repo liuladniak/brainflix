@@ -21,6 +21,7 @@ function VideoCard({ video, onSelectVideo, selectedVideoId }) {
           showControls={false}
         />
       </div>
+
       <div className="video-card__description">
         <h3 className="video-card__title">{video.title}</h3>
         <h3 className="video-card__channel">{video.channel}</h3>
