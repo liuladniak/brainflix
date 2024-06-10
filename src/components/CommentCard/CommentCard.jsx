@@ -4,7 +4,7 @@ import formatDate from "../../utils.js";
 function CommentCard({ comment }) {
   console.log("COMMENTS:", comment);
   return (
-    <div className="comment__card">
+    <li className="comment__card">
       <div className="comment__avatar"></div>
       <div className="comment-wrp">
         <div className="comment__heading">
@@ -15,7 +15,7 @@ function CommentCard({ comment }) {
         </div>
         <p className="comment__content">{comment.comment}</p>
       </div>
-    </div>
+    </li>
   );
 }
 

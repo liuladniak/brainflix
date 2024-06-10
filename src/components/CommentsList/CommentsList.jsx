@@ -7,11 +7,11 @@ function CommentsList({ videoData }) {
   console.log(commentsList);
 
   return (
-    <div className="comments--posted">
+    <ul className="comments--posted">
       {commentsList.map((comment, i) => {
         return <CommentCard comment={commentsList[i]} key={i} />;
       })}
-    </div>
+    </ul>
   );
 }
 
