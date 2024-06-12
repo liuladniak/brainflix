@@ -1,5 +1,5 @@
 import "./CommentCard.scss";
-import formatDate from "../../utils.js";
+import formatDate from "../../utils/utils.js";
 import Avatar from "../Avatar/Avatar.jsx";
 
 function CommentCard({ comment }) {

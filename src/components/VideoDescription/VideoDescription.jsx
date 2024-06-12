@@ -1,6 +1,6 @@
 import viewsIcon from "../../assets/icons/views.svg";
 import likesIcon from "../../assets/icons/likes.svg";
-import formatDate from "../../utils.js";
+import formatDate from "../../utils/utils.js";
 import "./VideoDescription.scss";
 
 function VideoDescription({ videoData }) {
