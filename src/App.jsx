@@ -9,7 +9,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MainPage />} />
+        <Route path="/" index element={<MainPage />} />
         <Route path="/videos/:videoId" element={<MainPage />} />
         <Route path="/upload" element={<UploadPage />} />
         <Route path="*" element={<PageNotFound />} />
