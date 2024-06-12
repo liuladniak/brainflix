@@ -1,7 +1,7 @@
 import "./VideoCard.scss";
 import Video from "../Video/Video";
 
-function VideoCard({ video, onSelectVideo, selectedVideoId }) {
+function VideoCard({ video, onSelectVideo, selectedVideoId, to }) {
   const handleSelect = () => {
     onSelectVideo(video.id);
   };
@@ -19,6 +19,7 @@ function VideoCard({ video, onSelectVideo, selectedVideoId }) {
           className="video-card__video"
           video={video}
           showControls={false}
+          to={to}
         />
       </div>
 

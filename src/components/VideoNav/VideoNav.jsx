@@ -13,6 +13,7 @@ function VideoNav({ onSelectVideo, videosData, selectedVideoId }) {
               video={video}
               onSelectVideo={onSelectVideo}
               selectedVideoId={selectedVideoId}
+              to={`/video.id`}
             />
           );
         })}

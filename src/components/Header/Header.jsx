@@ -13,7 +13,9 @@ function Header() {
       <div className="header-wrp">
         <Search />
         <Avatar avatarUrl={avatarIcon} className="avatar-position" />
-        <Button iconUrl={uploadIcon}>Upload</Button>
+        <Button iconUrl={uploadIcon} to="/upload">
+          Upload
+        </Button>
       </div>
     </header>
   );

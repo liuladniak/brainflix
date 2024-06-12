@@ -1,42 +1,20 @@
-import { useState } from "react";
-import videoDetailsData from "./data/video-details.json";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
 import "./styles/partials/_globals.scss";
-import Header from "./components/Header/Header";
-import VideoNav from "./components/VideoNav/VideoNav";
-import VideoDetails from "./components/VideoDetails/VideoDetails";
-import SelectedVideo from "./components/SelectedVideo/SelectedVideo";
+import MainPage from "./pages/MainPage/MainPage";
+import UploadPage from "./pages/UploadPage/UploadPage";
+import PageNotFound from "./pages/PageNotFound/PageNotFound";
 
 function App() {
-  const [selectedVideo, setSelectedVideo] = useState(videoDetailsData[0]);
-  const [nextVideos, setNextVideos] = useState(videoDetailsData.slice(1));
-
-  const selectVideo = (videoId) => {
-    const videoToSelect = videoDetailsData.find(
-      (video) => video.id === videoId
-    );
-
-    if (videoToSelect.id !== selectedVideo.id) {
-      const updatedNextVideos = nextVideos
-        .filter((v) => v.id !== videoId)
-        .concat(selectedVideo);
-
-      setSelectedVideo(videoToSelect);
-      setNextVideos(updatedNextVideos);
-    }
-  };
-
   return (
-    <div className="app">
-      <Header />
-      <SelectedVideo videoData={selectedVideo} />
-      <VideoDetails videoData={selectedVideo} />
-      <VideoNav
-        videosData={nextVideos}
-        onSelectVideo={selectVideo}
-        selectedVideoId={selectedVideo.id}
-      />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/videos/:videoId" element={<MainPage />} />
+        <Route path="/upload" element={<UploadPage />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
