@@ -10,7 +10,6 @@ import VideoNav from "../../components/VideoNav/VideoNav";
 function HomePage() {
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
-  const [nextVideos, setNextVideos] = useState([]);
 
   const { videoId } = useParams();
 
@@ -46,23 +45,18 @@ function HomePage() {
     }
   }, [videos, videoId]);
 
-  useEffect(() => {
-    if (selectedVideo) {
-      setNextVideos(videos.filter((video) => video.id !== selectedVideo.id));
-    }
-  }, [selectedVideo, videos]);
-
   if (!selectedVideo || videos.length === 0) {
-    return <div>Loading...</div>;
+    return <h2>Loading videos...</h2>;
   }
-
-  ////////////////////////////////////////////////////////////////
 
   return (
     <div className="app">
       <SelectedVideo selectedVideo={selectedVideo} />
       <VideoDetails selectedVideo={selectedVideo} />
-      <VideoNav videosData={nextVideos} selectedVideo={selectedVideo} />
+      <VideoNav
+        videosData={videos.filter((video) => video.id !== selectedVideo.id)}
+        selectedVideo={selectedVideo}
+      />
     </div>
   );
 }
