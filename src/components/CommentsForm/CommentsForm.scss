@@ -21,7 +21,14 @@
       gap: 1.8rem;
     }
   }
-
+  &__content {
+    width: 100%;
+    @include tablet-breakpoint {
+      display: flex;
+      gap: 1.6rem;
+      margin-left: 0;
+    }
+  }
   &__label {
     @include font($font-heading-sm, $lh-heading-md);
     text-transform: uppercase;
@@ -31,7 +38,7 @@
     padding-left: 4.8rem;
 
     @include tablet-breakpoint {
-      padding-left: 5.2rem;
+      padding-left: 5.8rem;
     }
   }
   &__field {
@@ -61,10 +68,11 @@
   }
 
   &__content {
-    margin-left: 4.4rem;
+    // margin-left: 4.4rem;
 
     @include tablet-breakpoint {
-      margin-left: 6.4rem;
+      // margin-left: 6.4rem;
+      margin-left: 0;
     }
   }
 

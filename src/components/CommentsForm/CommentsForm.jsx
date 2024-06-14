@@ -13,21 +13,21 @@ function CommentsForm() {
         </label>
         <div className="form__comment">
           <Avatar avatarUrl={avatarImage} />
-
-          <textarea
-            className="form__field"
-            type="text"
-            name="comment"
-            id="comment"
-            placeholder="Add a new comment"
-            required
-          ></textarea>
+          <div className="form__content">
+            <textarea
+              className="form__field"
+              type="text"
+              name="comment"
+              id="comment"
+              placeholder="Add a new comment"
+              required
+            ></textarea>
+            <Button type="submit" iconUrl={commentIcon}>
+              Comment
+            </Button>
+          </div>
         </div>
       </div>
-
-      <Button type="submit" iconUrl={commentIcon}>
-        Comment
-      </Button>
     </form>
   );
 }

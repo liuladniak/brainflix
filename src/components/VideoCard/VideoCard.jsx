@@ -1,32 +1,30 @@
 import "./VideoCard.scss";
+import { Link } from "react-router-dom";
 import Video from "../Video/Video";
 
-function VideoCard({ video, onSelectVideo, selectedVideoId, to }) {
-  const handleSelect = () => {
-    onSelectVideo(video.id);
-  };
-
+function VideoCard({ video, videoData }) {
   let videoNavCssClass = "video-card";
 
-  if (video.id === selectedVideoId) {
+  if (video.id === videoData) {
     videoNavCssClass += " video-card--selected";
   }
 
   return (
-    <li className={videoNavCssClass} onClick={handleSelect}>
-      <div className="video-card__media-wrp">
-        <Video
-          className="video-card__video"
-          video={video}
-          showControls={false}
-          to={to}
-        />
-      </div>
+    <li>
+      <Link className={videoNavCssClass} to={`/videos/${video.id}`}>
+        <div className="video-card__media-wrp">
+          <Video
+            className="video-card__video"
+            video={video}
+            showControls={false}
+          />
+        </div>
 
-      <div className="video-card__description">
-        <h3 className="video-card__title">{video.title}</h3>
-        <h3 className="video-card__channel">{video.channel}</h3>
-      </div>
+        <div className="video-card__description">
+          <h3 className="video-card__title">{video.title}</h3>
+          <h3 className="video-card__channel">{video.channel}</h3>
+        </div>
+      </Link>
     </li>
   );
 }

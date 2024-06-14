@@ -1,6 +1,11 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
+.header-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .header {
   display: flex;
   flex-direction: column;

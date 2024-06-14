@@ -15,6 +15,7 @@
   border-radius: 0.4rem;
   transition: 0.2s ease;
   cursor: pointer;
+  @include font($font-body-sm, $lh-body-sm);
 
   &:hover {
     background-color: $color-brainflix-darkblue;
@@ -26,7 +27,9 @@
     left: 1.2rem;
     transform: translateY(-50%);
   }
-
+  &.btn--comment {
+    width: calc(100% - 1.2rem);
+  }
   @include tablet-breakpoint {
     min-width: 155px;
     max-width: 200px;

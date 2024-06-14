@@ -8,14 +8,16 @@ import Button from "../Button/Button";
 
 function Header() {
   return (
-    <header className="header">
-      <Logo />
-      <div className="header-wrp">
-        <Search />
-        <Avatar avatarUrl={avatarIcon} className="avatar-position" />
-        <Button iconUrl={uploadIcon} to="/upload">
-          Upload
-        </Button>
+    <header className="header-section">
+      <div className="header">
+        <Logo />
+        <div className="header-wrp">
+          <Search />
+          <Avatar avatarUrl={avatarIcon} className="avatar-position" />
+          <Button iconUrl={uploadIcon} to="/upload" className="btn--comment">
+            Upload
+          </Button>
+        </div>
       </div>
     </header>
   );

@@ -1,16 +1,2 @@
 @use "./styles/partials/variables" as *;
 @use "./styles/partials/mixins" as *;
-
-.app {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  flex-wrap: wrap;
-
-  @include desktop-breakpoint {
-    flex-direction: row;
-    align-items: center;
-  }
-}

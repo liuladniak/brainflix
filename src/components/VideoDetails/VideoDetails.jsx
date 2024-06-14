@@ -2,11 +2,11 @@ import VideoComments from "../VideoComments/VideoComments";
 import VideoDescription from "../VideoDescription/VideoDescription";
 import "./VideoDetails.scss";
 
-function VideoDetails({ videoData }) {
+function VideoDetails({ selectedVideo }) {
   return (
     <section className="video-details">
-      <VideoDescription videoData={videoData} />
-      <VideoComments videoData={videoData} />
+      <VideoDescription selectedVideo={selectedVideo} />
+      <VideoComments selectedVideo={selectedVideo} />
     </section>
   );
 }

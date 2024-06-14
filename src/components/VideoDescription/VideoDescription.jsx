@@ -3,8 +3,9 @@ import likesIcon from "../../assets/icons/likes.svg";
 import formatDate from "../../utils/utils.js";
 import "./VideoDescription.scss";
 
-function VideoDescription({ videoData }) {
-  const { description, title, channel, timestamp, views, likes } = videoData;
+function VideoDescription({ selectedVideo }) {
+  const { description, title, channel, timestamp, views, likes } =
+    selectedVideo;
 
   return (
     <article className="video-desc">

@@ -1,11 +1,11 @@
 import Video from "../Video/Video";
 import "./SelectedVideo.scss";
 
-function SelectedVideo({ videoData }) {
+function SelectedVideo({ selectedVideo }) {
   return (
     <section className="video-section">
       <Video
-        video={videoData}
+        video={selectedVideo}
         showControls={true}
         customControls={true}
         className="video--main"
