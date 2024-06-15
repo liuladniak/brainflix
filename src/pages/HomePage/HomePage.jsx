@@ -10,7 +10,7 @@ import VideoNav from "../../components/VideoNav/VideoNav";
 function HomePage() {
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
-
+  const [isLoading, setIsLoading] = useState(true);
   const { videoId } = useParams();
 
   useEffect(() => {
@@ -18,9 +18,9 @@ function HomePage() {
       try {
         const response = await axios.get(`${API_URL}videos?api_key=${API_KEY}`);
         setVideos(response.data);
+        setIsLoading(false);
       } catch (err) {
         console.log(err.message, err);
-        throw new Error(err.message);
       }
     };
     getVideos();
@@ -37,13 +37,14 @@ function HomePage() {
         console.error(err.message, err);
       }
     };
-
-    if (videoId) {
-      getVideoDetails(videoId);
-    } else {
-      getVideoDetails(videos[0]?.id);
+    if (!isLoading) {
+      if (videoId) {
+        getVideoDetails(videoId);
+      } else {
+        getVideoDetails(videos[0]?.id);
+      }
     }
-  }, [videos, videoId]);
+  }, [videos, videoId, isLoading]);
 
   if (!selectedVideo || videos.length === 0) {
     return <h2>Loading videos...</h2>;
