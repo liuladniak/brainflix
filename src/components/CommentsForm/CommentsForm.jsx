@@ -8,14 +8,14 @@ function CommentsForm() {
   return (
     <form action="" method="post" className="form">
       <div className="form-wrp">
-        <label className="form__label" htmlFor="comment">
+        <label className="form__label form__label--comments" htmlFor="comment">
           Join the Conversation
         </label>
         <div className="form__comment">
           <Avatar avatarUrl={avatarImage} />
           <div className="form__content">
             <textarea
-              className="form__field"
+              className="form__field form__field--comments"
               type="text"
               name="comment"
               id="comment"

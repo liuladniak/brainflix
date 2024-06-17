@@ -1,0 +1,132 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.upload {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.6rem;
+
+  &__heading {
+    color: $color-brainflix-black;
+    @include heading-style(
+      $font-heading-lg-m,
+      $lh-heading-lg-m,
+      $padding-heading-sm
+    );
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+
+    &__choose-file {
+      position: relative;
+      border: 0.2rem dotted $color-brainflix-darkblue;
+      border-radius: 1rem;
+      @include flex-column-center;
+      gap: 1.6rem;
+      padding: 1.6rem;
+      cursor: pointer;
+    }
+
+    &__img {
+      border-radius: 0.4rem;
+
+      & img {
+        width: 100%;
+        height: 100%;
+      }
+
+      &-default {
+        display: none;
+      }
+      @include tablet-breakpoint {
+        max-width: 350px;
+        max-height: 200px;
+      }
+    }
+
+    &__icon {
+      stroke: $color-brainflix-darkblue;
+      width: 70px;
+      height: 70px;
+    }
+
+    @include tablet-breakpoint {
+      padding-bottom: 2.4rem;
+      border-bottom: 0.1rem solid $color-mercury;
+    }
+    @include desktop-breakpoint {
+      flex-direction: row;
+    }
+  }
+
+  &-preview {
+    width: 100%;
+    max-width: 350px;
+    @include tablet-breakpoint {
+      width: 50%;
+    }
+
+    @include desktop-breakpoint {
+      width: 100%;
+      flex: 1;
+    }
+  }
+
+  &-desc {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.6rem;
+
+    &__input {
+      height: fit-content;
+    }
+
+    &__textarea {
+      min-height: 95px;
+      flex-grow: inherit;
+    }
+
+    @include tablet-breakpoint {
+      flex: 2;
+    }
+  }
+
+  &-drag-n-drop {
+    @include flex-column-center;
+    @include font($font-body-sm, $lh-body-sm);
+    color: $color-brainflix-black;
+    text-align: center;
+  }
+
+  &-supports {
+    @include flex-column-center;
+    @include font($font-body-sm, $lh-body-sm);
+  }
+
+  &-publish {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.6rem;
+    margin: 1.6rem 0;
+
+    @include tablet-breakpoint {
+      flex-direction: row;
+      margin: 2.4rem 0;
+    }
+  }
+
+  @include tablet-breakpoint {
+    padding: 0 $padding-lg;
+  }
+
+  @include desktop-breakpoint {
+    padding: 0;
+  }
+}

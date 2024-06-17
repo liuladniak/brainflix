@@ -1,0 +1,35 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.upload-success {
+  color: #367c2b;
+  text-align: center;
+
+  & h2 {
+    @include heading-style(
+      $font-heading-lg-m,
+      $lh-heading-lg-m,
+      $padding-heading-sm
+    );
+
+    @include tablet-breakpoint {
+      @include heading-style(
+        $font-heading-lg-d,
+        $lh-heading-lg-d,
+        $padding-heading-lg
+      );
+    }
+  }
+
+  & h3 {
+    @include font(2rem, $lh-heading-md);
+
+    @include tablet-breakpoint {
+      @include font($font-heading-lg-m, $lh-heading-md);
+    }
+  }
+
+  @include tablet-breakpoint {
+    margin: 3rem 2.4rem;
+  }
+}

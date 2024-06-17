@@ -51,14 +51,14 @@ function HomePage() {
   }
 
   return (
-    <div className="app">
+    <main className="app">
       <SelectedVideo selectedVideo={selectedVideo} />
       <VideoDetails selectedVideo={selectedVideo} />
       <VideoNav
         videosData={videos.filter((video) => video.id !== selectedVideo.id)}
         selectedVideo={selectedVideo}
       />
-    </div>
+    </main>
   );
 }
 

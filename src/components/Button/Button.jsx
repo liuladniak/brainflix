@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import "./Button.scss";
 
-function Button({ children, iconUrl, to, className = "" }) {
+function Button({ children, iconUrl, to, className = "", onClick }) {
   const content = (
     <>
-      <img src={iconUrl} alt="Upload button icon" />
+      {iconUrl && <img src={iconUrl} alt="Button icon" />}
       <span>{children}</span>
     </>
   );
@@ -13,7 +13,9 @@ function Button({ children, iconUrl, to, className = "" }) {
       {content}
     </Link>
   ) : (
-    <button className={`btn ${className}`}>{content}</button>
+    <button className={`btn ${className}`} onClick={onClick}>
+      {content}
+    </button>
   );
 }
 

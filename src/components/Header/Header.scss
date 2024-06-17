@@ -47,5 +47,6 @@
   @include desktop-breakpoint {
     max-width: 1010px;
     width: 1010px;
+    padding: $padding-sm 0;
   }
 }

@@ -17,24 +17,43 @@
   cursor: pointer;
   @include font($font-body-sm, $lh-body-sm);
 
-  &:hover {
-    background-color: $color-brainflix-darkblue;
-  }
-
   & img {
     position: absolute;
     top: 50%;
     left: 1.2rem;
     transform: translateY(-50%);
   }
-  &.btn--comment {
+  &--upload {
+    @include tablet-breakpoint {
+      order: 1;
+    }
+  }
+
+  &--comment {
     width: calc(100% - 1.2rem);
   }
+
+  &--choose-file {
+    order: unset !important;
+  }
+
+  &--cancel {
+    background-color: transparent;
+    color: $color-brainflix-blue;
+
+    &:hover {
+      background-color: rgba(0, 149, 255, 0.1) !important;
+    }
+  }
+
+  &:hover {
+    background-color: $color-brainflix-darkblue;
+  }
+
   @include tablet-breakpoint {
     min-width: 155px;
     max-width: 200px;
     flex-shrink: 0;
     padding: 0 3.2rem;
-    order: 1;
   }
 }
