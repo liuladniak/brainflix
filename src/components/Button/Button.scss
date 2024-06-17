@@ -16,15 +16,18 @@
   transition: 0.2s ease;
   cursor: pointer;
   @include font($font-body-sm, $lh-body-sm);
+
   & button {
     opacity: 0.5;
   }
+
   & img {
     position: absolute;
     top: 50%;
     left: 1.2rem;
     transform: translateY(-50%);
   }
+
   &--upload {
     @include tablet-breakpoint {
       order: 1;

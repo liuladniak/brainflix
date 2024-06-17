@@ -1,5 +1,5 @@
-import { useState } from "react";
 import axios from "axios";
+import { useState } from "react";
 import { API_KEY, API_URL } from "../../utils/api";
 import "./CommentsForm.scss";
 import commentIcon from "../../assets/icons/add_comment.svg";

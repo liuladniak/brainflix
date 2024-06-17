@@ -13,7 +13,7 @@ function VideoComments({ selectedVideo }) {
     setComments(selectedVideo.comments);
   }, [selectedVideo]);
 
-  const handleCommentPosted = (newComment) => {
+  const handleCommentPost = (newComment) => {
     setComments((prevComments) => [newComment, ...prevComments]);
   };
 
@@ -36,7 +36,7 @@ function VideoComments({ selectedVideo }) {
       <div className="comments-wrp">
         <CommentsForm
           selectedVideo={selectedVideo}
-          onCommentPosted={handleCommentPosted}
+          onCommentPosted={handleCommentPost}
         />
         <CommentsList
           comments={comments}

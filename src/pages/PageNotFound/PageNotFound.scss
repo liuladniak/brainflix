@@ -1,0 +1,29 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.page-not-found {
+  @include heading-style(
+    $font-heading-lg-m,
+    $lh-heading-lg-m,
+    $padding-heading-sm
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #076585;
+  background: -webkit-linear-gradient(to right, #fff, #076585);
+  background: linear-gradient(to right, #fff, #076585);
+  width: 100vw;
+  height: 100vh;
+  padding-top: 6rem;
+  gap: 2rem;
+
+  @include tablet-breakpoint {
+    @include heading-style(
+      $font-heading-lg-d,
+      $lh-heading-lg-d,
+      $padding-heading-lg
+    );
+    padding-top: 12rem;
+  }
+}

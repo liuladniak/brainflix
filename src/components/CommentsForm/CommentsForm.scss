@@ -23,6 +23,7 @@
   }
   &__content {
     width: 100%;
+
     @include tablet-breakpoint {
       display: flex;
       gap: 1.6rem;
@@ -38,6 +39,7 @@
     &--comments {
       margin-bottom: 0.4rem;
       padding-left: 4.8rem;
+
       @include tablet-breakpoint {
         padding-left: 5.8rem;
       }
