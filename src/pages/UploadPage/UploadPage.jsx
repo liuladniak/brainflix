@@ -10,7 +10,7 @@ function UploadPage() {
   const [posterPreview, setPosterPreview] = useState(null);
 
   const fileInputRef = useRef(null);
-  const handleChooseFileClick = (e) => {
+  const handleChooseFileClick = () => {
     fileInputRef.current.click();
   };
 
