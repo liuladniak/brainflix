@@ -1,13 +1,13 @@
 import CommentCard from "../CommentCard/CommentCard";
 import "./CommentsList.scss";
 
-function CommentsList({ videoData }) {
-  const commentsList = videoData.comments;
-
+function CommentsList({ comments, onDeleteComment }) {
   return (
     <ul className="comments--posted">
-      {commentsList.map((comment, i) => {
-        return <CommentCard comment={commentsList[i]} key={i} />;
+      {comments.map((comment, i) => {
+        return (
+          <CommentCard comment={comment} key={i} onDelete={onDeleteComment} />
+        );
       })}
     </ul>
   );

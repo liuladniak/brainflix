@@ -69,6 +69,7 @@ function UploadPage() {
               type="text"
               name="title"
               placeholder="Add a title to your video"
+              required
             />
           </label>
           <label className="form__label" htmlFor="description">
@@ -78,6 +79,7 @@ function UploadPage() {
               type="text"
               name="description"
               placeholder="Add a description to your video"
+              required
             />
           </label>
         </div>
@@ -87,6 +89,7 @@ function UploadPage() {
           to="/uploadSuccess"
           className="btn--publish"
           iconUrl={publishIcon}
+          type="submit"
         >
           Publish
         </Button>
