@@ -5,7 +5,6 @@ import HomePage from "./pages/HomePage/HomePage";
 import UploadPage from "./pages/UploadPage/UploadPage";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import Header from "./components/Header/Header";
-import UploadSuccess from "./components/UploadSuccess/UploadSuccess";
 
 function App() {
   return (
@@ -15,7 +14,6 @@ function App() {
         <Route path="/" index element={<HomePage />} />
         <Route path="/videos/:videoId" element={<HomePage />} />
         <Route path="/upload" element={<UploadPage />} />
-        <Route path="/uploadSuccess" element={<UploadSuccess />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>

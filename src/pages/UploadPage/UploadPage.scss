@@ -5,7 +5,10 @@
   display: flex;
   flex-direction: column;
   padding: 0 1.6rem;
-
+  &-success {
+    color: #166534;
+    @include font($font-body-md, $lh-body-md);
+  }
   &__heading {
     color: $color-brainflix-black;
     @include heading-style(

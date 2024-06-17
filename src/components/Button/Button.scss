@@ -16,7 +16,9 @@
   transition: 0.2s ease;
   cursor: pointer;
   @include font($font-body-sm, $lh-body-sm);
-
+  & button {
+    opacity: 0.5;
+  }
   & img {
     position: absolute;
     top: 50%;

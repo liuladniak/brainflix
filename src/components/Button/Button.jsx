@@ -1,14 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Button.scss";
 
-function Button({
-  children,
-  iconUrl,
-  to,
-  className = "",
-  onClick,
-  disabled = false,
-}) {
+function Button({ children, iconUrl, to, className = "", onClick }) {
   const content = (
     <>
       {iconUrl && <img src={iconUrl} alt="Button icon" />}
@@ -20,11 +13,7 @@ function Button({
       {content}
     </Link>
   ) : (
-    <button
-      className={`btn ${className}`}
-      onClick={onClick}
-      disabled={disabled}
-    >
+    <button className={`btn ${className}`} onClick={onClick}>
       {content}
     </button>
   );
