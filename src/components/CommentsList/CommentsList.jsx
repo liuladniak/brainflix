@@ -1,13 +1,11 @@
 import CommentCard from "../CommentCard/CommentCard";
 import "./CommentsList.scss";
 
-function CommentsList({ comments, onDeleteComment }) {
+function CommentsList({ comments }) {
   return (
     <ul className="comments--posted">
       {comments.map((comment, i) => {
-        return (
-          <CommentCard comment={comment} key={i} onDelete={onDeleteComment} />
-        );
+        return <CommentCard comment={comment} key={i} />;
       })}
     </ul>
   );

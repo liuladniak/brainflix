@@ -5,7 +5,8 @@ function SelectedVideo({ selectedVideo }) {
   return (
     <section className="video-section">
       <Video
-        video={selectedVideo}
+        video={selectedVideo.video}
+        image={selectedVideo.image}
         showControls={true}
         customControls={true}
         className="video--main"

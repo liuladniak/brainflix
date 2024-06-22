@@ -1,35 +1,65 @@
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "./UploadPage.scss";
+import { API_URL } from "../../utils/api";
 import publishIcon from "../../assets/icons/publish.svg";
 import uploadIcon from "../../assets/icons/upload-file.svg";
 import Button from "../../components/Button/Button";
 import Wrapper from "../../components/Wrapper/Wrapper";
 
 function UploadPage() {
-  const [posterFile, setPosterFile] = useState(null);
+  const [videoFile, setVideoFile] = useState(null);
   const [posterPreview, setPosterPreview] = useState(null);
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
   const [success, setSuccess] = useState(false);
   const navigate = useNavigate();
-
+  const [displayError, setDisplayError] = useState(false);
   const fileInputRef = useRef(null);
+  const defaultThumbnail = `${API_URL}/images/default-thumbnail.jpg`;
+
   const handleChooseFileClick = () => {
     fileInputRef.current.click();
   };
-
-  const handleFileChange = (event) => {
-    setPosterFile(event.target.files[0]);
-    setPosterPreview(URL.createObjectURL(event.target.files[0]));
-    console.log(posterFile);
+  const handlefileChange = (event) => {
+    const file = event.target.files[0];
+    setVideoFile(file);
+    setPosterPreview(defaultThumbnail);
   };
 
-  function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSuccess(true);
-    setTimeout(() => {
-      navigate("/");
-    }, 1500);
-  }
+
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("channel", "Historic Stream");
+    formData.append("description", description);
+    formData.append("image", `/images/default-thumbnail.jpg`);
+    formData.append("video", videoFile);
+
+    try {
+      const response = await axios.post(`${API_URL}/videos`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      if (response.status === 201) {
+        setSuccess(true);
+        setTitle("");
+        setDescription("");
+        setPosterPreview(null);
+        setTimeout(() => {
+          navigate("/");
+        }, 1500);
+      } else {
+        setDisplayError(true);
+      }
+    } catch (error) {
+      console.error("There was an error uploading the video", error);
+      console.log(error);
+    }
+  };
 
   return (
     <main className="upload">
@@ -39,11 +69,17 @@ function UploadPage() {
           <h4>Thank you for uploading your file</h4>
         </div>
       )}
-      <h2 className="upload__heading">Upload Video</h2>
+      {displayError && (
+        <div className="upload-fail">
+          <h3>File upload failed</h3>
+          <h4>Try uploading again or refresh the page</h4>
+        </div>
+      )}
+      <h1 className="upload__heading">Upload Video</h1>
       <form action="post" className="form-section" onSubmit={handleSubmit}>
         <Wrapper className="upload-form">
           <div className="upload-preview">
-            <label className="form__label" htmlFor="thumbnail">
+            <label className="form__label" htmlFor="video">
               Video thumbnail
             </label>
             {posterPreview ? (
@@ -55,6 +91,9 @@ function UploadPage() {
                 onClick={handleChooseFileClick}
                 className="upload-form__choose-file"
               >
+                <Wrapper className="upload-drag-n-drop">
+                  <span>Click to select your file</span>
+                </Wrapper>
                 <div>
                   <img
                     className="upload-form__icon"
@@ -62,20 +101,19 @@ function UploadPage() {
                     alt="upload icon"
                   />
                 </div>
+
                 <input
                   ref={fileInputRef}
                   className="upload-form__img-default"
                   type="file"
-                  name="thumbnail"
-                  onChange={handleFileChange}
+                  name="video"
+                  onChange={handlefileChange}
                   required
                 />
-                <Wrapper className="upload-drag-n-drop">
-                  <span>Drag & Drop your file here or</span>
-                  <span>Click to select your file</span>
-                </Wrapper>
+
                 <Wrapper className="upload-supports">
-                  <span>Supports files: PNG, JPG, JPEG</span>
+                  <span>Supports files: MP4, MKV, WEBM</span>
+                  <span>File size should not be more than 50MB</span>
                 </Wrapper>
               </div>
             )}
@@ -89,6 +127,8 @@ function UploadPage() {
                 type="text"
                 name="title"
                 placeholder="Add a title to your video"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
                 required
               />
             </label>
@@ -99,10 +139,24 @@ function UploadPage() {
                 type="text"
                 name="description"
                 placeholder="Add a description to your video"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
                 required
               />
             </label>
           </div>
+          {/* <div className="upload-preview">
+            <label className="form__label" htmlFor="video">
+              Video File
+            </label>
+            <input
+              className="form__field upload-desc__input"
+              type="file"
+              name="video"
+              onChange={handlefileChange}
+              required
+            />
+          </div> */}
         </Wrapper>
         <Wrapper className="upload-publish">
           <Button className="btn--publish" iconUrl={publishIcon} type="submit">

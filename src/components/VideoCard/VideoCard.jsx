@@ -15,7 +15,8 @@ function VideoCard({ video, videoData }) {
         <div className="video-card__media-wrp">
           <Video
             className="video-card__video"
-            video={video}
+            video={video.video}
+            image={video.image}
             showControls={false}
           />
         </div>

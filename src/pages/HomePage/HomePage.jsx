@@ -2,10 +2,11 @@ import axios from "axios";
 import "./HomePage.scss";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { API_KEY, API_URL } from "../../utils/api";
+import { API_URL } from "../../utils/api";
 import SelectedVideo from "../../components/SelectedVideo/SelectedVideo";
 import VideoDetails from "../../components/VideoDetails/VideoDetails";
 import VideoNav from "../../components/VideoNav/VideoNav";
+import Loader from "../../components/Loader/Loader";
 
 function HomePage() {
   const [videos, setVideos] = useState([]);
@@ -16,7 +17,7 @@ function HomePage() {
   useEffect(() => {
     const getVideos = async () => {
       try {
-        const response = await axios.get(`${API_URL}videos?api_key=${API_KEY}`);
+        const response = await axios.get(`${API_URL}/videos`);
         setVideos(response.data);
         setIsLoading(false);
       } catch (err) {
@@ -29,9 +30,7 @@ function HomePage() {
   useEffect(() => {
     const getVideoDetails = async (id) => {
       try {
-        const response = await axios.get(
-          `${API_URL}videos/${id}?api_key=${API_KEY}`
-        );
+        const response = await axios.get(`${API_URL}/videos/${id}`);
         setSelectedVideo(response.data);
       } catch (err) {
         console.error(err.message, err);
@@ -47,7 +46,7 @@ function HomePage() {
   }, [videos, videoId, isLoading]);
 
   if (!selectedVideo || videos.length === 0) {
-    return <h2>Loading videos...</h2>;
+    return <Loader />;
   }
 
   return (
@@ -56,7 +55,6 @@ function HomePage() {
       <VideoDetails selectedVideo={selectedVideo} />
       <VideoNav
         videosData={videos.filter((video) => video.id !== selectedVideo.id)}
-        selectedVideo={selectedVideo}
       />
     </main>
   );

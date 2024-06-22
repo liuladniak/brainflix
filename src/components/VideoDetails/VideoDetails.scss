@@ -3,8 +3,10 @@
 
 .video-details {
   flex: 1;
+  width: 100%;
 
   @include desktop-breakpoint {
     flex: none;
+    width: fit-content;
   }
 }

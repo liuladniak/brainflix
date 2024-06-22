@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { API_KEY, API_URL } from "../../utils/api";
+import { API_URL } from "../../utils/api";
 import "./CommentsForm.scss";
 import commentIcon from "../../assets/icons/add_comment.svg";
 import Button from "../Button/Button";
@@ -14,7 +14,7 @@ function CommentsForm({ selectedVideo, onCommentPosted }) {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${API_URL}videos/${selectedVideo.id}/comments?api_key=${API_KEY}`,
+        `${API_URL}videos/${selectedVideo.id}/comments`,
         { name: "User", comment: commentText }
       );
       onCommentPosted(response.data);
