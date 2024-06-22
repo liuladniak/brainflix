@@ -43,14 +43,14 @@
         height: 100%;
       }
 
-      &-default {
-        display: none;
-      }
-
       @include tablet-breakpoint {
         max-width: 350px;
         max-height: 200px;
       }
+    }
+
+    &__file {
+      display: none;
     }
 
     &__icon {

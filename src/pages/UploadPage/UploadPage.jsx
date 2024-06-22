@@ -14,8 +14,8 @@ function UploadPage() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [success, setSuccess] = useState(false);
-  const navigate = useNavigate();
   const [displayError, setDisplayError] = useState(false);
+  const navigate = useNavigate();
   const fileInputRef = useRef(null);
   const defaultThumbnail = `${API_URL}/images/default-thumbnail.jpg`;
 
@@ -54,11 +54,20 @@ function UploadPage() {
         }, 1500);
       } else {
         setDisplayError(true);
+        //TODO: set styles for error message
       }
     } catch (error) {
       console.error("There was an error uploading the video", error);
-      console.log(error);
     }
+  };
+
+  const handleFormReset = (e) => {
+    e.preventDefault();
+
+    setTitle("");
+    setDescription("");
+    setVideoFile(null);
+    setPosterPreview(null);
   };
 
   return (
@@ -104,7 +113,7 @@ function UploadPage() {
 
                 <input
                   ref={fileInputRef}
-                  className="upload-form__img-default"
+                  className="upload-form__file"
                   type="file"
                   name="video"
                   onChange={handlefileChange}
@@ -145,24 +154,14 @@ function UploadPage() {
               />
             </label>
           </div>
-          {/* <div className="upload-preview">
-            <label className="form__label" htmlFor="video">
-              Video File
-            </label>
-            <input
-              className="form__field upload-desc__input"
-              type="file"
-              name="video"
-              onChange={handlefileChange}
-              required
-            />
-          </div> */}
         </Wrapper>
         <Wrapper className="upload-publish">
           <Button className="btn--publish" iconUrl={publishIcon} type="submit">
             Publish
           </Button>
-          <Button className="btn--cancel">Cancel</Button>
+          <Button className="btn--cancel" onClick={handleFormReset}>
+            Cancel
+          </Button>
         </Wrapper>
       </form>
     </main>
