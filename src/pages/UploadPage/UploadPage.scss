@@ -44,8 +44,8 @@
       }
 
       @include tablet-breakpoint {
-        max-width: 350px;
-        max-height: 200px;
+        max-width: 35rem;
+        max-height: 20rem;
       }
     }
 
@@ -55,8 +55,8 @@
 
     &__icon {
       stroke: $color-brainflix-darkblue;
-      width: 70px;
-      height: 70px;
+      width: 7rem;
+      height: 7rem;
     }
 
     @include tablet-breakpoint {
@@ -70,7 +70,7 @@
 
   &-preview {
     width: 100%;
-    max-width: 350px;
+    max-width: 35rem;
 
     @include tablet-breakpoint {
       width: 50%;
@@ -94,7 +94,7 @@
     }
 
     &__textarea {
-      min-height: 95px;
+      min-height: 9.5rem;
       flex-grow: inherit;
     }
 

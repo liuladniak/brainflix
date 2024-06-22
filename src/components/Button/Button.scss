@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
+  height: 4rem;
   width: 100%;
   background-color: $color-brainflix-blue;
   color: $color-white;
@@ -56,8 +56,8 @@
   }
 
   @include tablet-breakpoint {
-    min-width: 155px;
-    max-width: 200px;
+    min-width: 15.5rem;
+    max-width: 20rem;
     flex-shrink: 0;
     padding: 0 3.2rem;
   }

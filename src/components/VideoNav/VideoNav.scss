@@ -29,13 +29,13 @@
 
   @include tablet-breakpoint {
     padding: 0 $padding-md $padding-md;
-    max-width: 310px;
+    max-width: 31rem;
   }
 
   @include desktop-breakpoint {
     border-left: 0.1rem solid $color-mercury;
     flex: 1;
     padding: 0 $padding-lg $padding-lg;
-    max-width: 330px;
+    max-width: 33rem;
   }
 }

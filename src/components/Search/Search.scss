@@ -5,7 +5,7 @@
   flex: 1;
 
   &-input {
-    height: 36px;
+    height: 3.6rem;
     width: 100%;
     background-image: url("../../assets/icons/search.svg");
     background-repeat: no-repeat;
@@ -23,8 +23,8 @@
     }
 
     @include tablet-breakpoint {
-      width: 240px;
-      height: 40px;
+      width: 24rem;
+      height: 4rem;
       background-position: 1.6rem;
       padding: 1.6rem 1.6rem 1.6rem 4.4rem;
     }

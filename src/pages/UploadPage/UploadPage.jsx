@@ -85,7 +85,12 @@ function UploadPage() {
         </div>
       )}
       <h1 className="upload__heading">Upload Video</h1>
-      <form action="post" className="form-section" onSubmit={handleSubmit}>
+      <form
+        className="form-section"
+        action="post"
+        encType="multipart/form-data"
+        onSubmit={handleSubmit}
+      >
         <Wrapper className="upload-form">
           <div className="upload-preview">
             <label className="form__label" htmlFor="video">

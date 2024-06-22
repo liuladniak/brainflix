@@ -46,7 +46,7 @@
     }
   }
   &__field {
-    height: 95px;
+    height: 9.5rem;
     width: 100%;
     border-radius: 0.4rem;
     padding: 1.2rem;
@@ -65,7 +65,7 @@
     }
 
     @include tablet-breakpoint {
-      height: 40px;
+      height: 4rem;
       display: flex;
       align-items: center;
     }
@@ -85,7 +85,7 @@
   }
 
   @include desktop-breakpoint {
-    max-width: 700px;
+    max-width: 70rem;
     width: 100%;
     padding-right: $padding-md;
   }

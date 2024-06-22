@@ -4,6 +4,6 @@
 .comments--posted {
   @include desktop-breakpoint {
     width: 100%;
-    max-width: 700px;
+    max-width: 70rem;
   }
 }

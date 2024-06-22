@@ -6,7 +6,7 @@
   align-items: center;
   gap: 1.6rem;
   margin-bottom: 1rem;
-  max-width: 330px;
+  max-width: 33rem;
 
   &:hover {
     cursor: pointer;
@@ -16,12 +16,12 @@
   &__media-wrp {
     display: flex;
     flex-shrink: 0;
-    width: 100px;
-    height: 60px;
+    width: 10rem;
+    height: 6rem;
 
     @include tablet-breakpoint {
-      width: 110px;
-      height: 65px;
+      width: 11rem;
+      height: 6.5rem;
     }
   }
 
@@ -36,7 +36,7 @@
 
   &__description {
     width: 100%;
-    height: 60px;
+    height: 6rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -61,6 +61,6 @@
 
   @include tablet-breakpoint {
     margin-bottom: 0;
-    width: 330px;
+    width: 33rem;
   }
 }
