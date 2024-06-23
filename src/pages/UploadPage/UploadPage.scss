@@ -73,6 +73,7 @@
       padding-bottom: 2.4rem;
       border-bottom: 0.1rem solid $color-mercury;
     }
+
     @include desktop-breakpoint {
       flex-direction: row;
     }
