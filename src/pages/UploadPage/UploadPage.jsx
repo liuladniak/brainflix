@@ -7,6 +7,7 @@ import publishIcon from "../../assets/icons/publish.svg";
 import uploadIcon from "../../assets/icons/upload-file.svg";
 import Button from "../../components/Button/Button";
 import Wrapper from "../../components/Wrapper/Wrapper";
+import Spinner from "../../components/Loader/Spinner";
 
 function UploadPage() {
   const [videoFile, setVideoFile] = useState(null);
@@ -14,10 +15,12 @@ function UploadPage() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [success, setSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(null);
   const [displayError, setDisplayError] = useState(false);
   const navigate = useNavigate();
   const fileInputRef = useRef(null);
   const defaultThumbnail = `${API_URL}/images/default-thumbnail.jpg`;
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChooseFileClick = () => {
     fileInputRef.current.click();
@@ -28,9 +31,9 @@ function UploadPage() {
     setPosterPreview(defaultThumbnail);
   };
 
-  const handleSubmit = async (e) => {
+  const handleFileUpoloadSubmit = async (e) => {
     e.preventDefault();
-
+    setIsLoading(true);
     const formData = new FormData();
     formData.append("title", title);
     formData.append("channel", "Historic Stream");
@@ -39,25 +42,23 @@ function UploadPage() {
     formData.append("video", videoFile);
 
     try {
-      const response = await axios.post(`${API_URL}/videos`, formData, {
+      await axios.post(`${API_URL}/videos`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
-      if (response.status === 201) {
-        setSuccess(true);
-        setTitle("");
-        setDescription("");
-        setPosterPreview(null);
-        setTimeout(() => {
-          navigate("/");
-        }, 1500);
-      } else {
-        setDisplayError(true);
-        //TODO: set styles for error message
-      }
-    } catch (error) {
-      console.error("There was an error uploading the video", error);
+      setSuccess(true);
+      setTitle("");
+      setDescription("");
+      setPosterPreview(null);
+      setIsLoading(false);
+      setTimeout(() => {
+        navigate("/");
+      }, 1500);
+    } catch (err) {
+      setDisplayError(true);
+      setErrorMessage(err.response.data.message);
+      setIsLoading(false);
     }
   };
 
@@ -68,10 +69,16 @@ function UploadPage() {
     setDescription("");
     setVideoFile(null);
     setPosterPreview(null);
+    setDisplayError(false);
   };
 
   return (
     <main className="upload">
+      {isLoading && (
+        <div className="upload-spinner">
+          <Spinner className="spinner-small" />
+        </div>
+      )}
       {success && (
         <div className="upload-success">
           <h3>Uploaded successfully!</h3>
@@ -81,7 +88,7 @@ function UploadPage() {
       {displayError && (
         <div className="upload-fail">
           <h3>File upload failed</h3>
-          <h4>Try uploading again or refresh the page</h4>
+          <h4>{errorMessage}</h4>
         </div>
       )}
       <h1 className="upload__heading">Upload Video</h1>
@@ -89,7 +96,7 @@ function UploadPage() {
         className="form-section"
         action="post"
         encType="multipart/form-data"
-        onSubmit={handleSubmit}
+        onSubmit={handleFileUpoloadSubmit}
       >
         <Wrapper className="upload-form">
           <div className="upload-preview">

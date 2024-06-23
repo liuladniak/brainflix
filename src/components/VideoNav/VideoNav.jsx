@@ -1,5 +1,4 @@
 import VideoCard from "../VideoCard/VideoCard";
-
 import "./VideoNav.scss";
 
 function VideoNav({ videosData }) {

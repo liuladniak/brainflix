@@ -6,9 +6,17 @@
   flex-direction: column;
   padding: 0 1.6rem;
 
+  &-success,
+  &-fail {
+    @include font($font-body-md, $lh-body-md);
+  }
+
   &-success {
     color: #166534;
-    @include font($font-body-md, $lh-body-md);
+  }
+
+  &-fail {
+    color: #981313e1;
   }
 
   &__heading {
@@ -50,7 +58,9 @@
     }
 
     &__file {
-      display: none;
+      opacity: 0;
+      position: "absolute";
+      z-index: -1;
     }
 
     &__icon {
@@ -136,4 +146,7 @@
   @include desktop-breakpoint {
     padding: 0;
   }
+}
+.upload-spinner {
+  padding: 2rem;
 }

@@ -1,10 +1,11 @@
 import "./Loader.scss";
+import Spinner from "./Spinner";
 
 function Loader() {
   return (
     <div className="loader">
-      <div className="spinner"></div>
-      <h2 className="loader-heading">Loading videos...</h2>;
+      <Spinner className="spinner-large" />
+      <h2 className="loader-heading">Loading...</h2>;
     </div>
   );
 }

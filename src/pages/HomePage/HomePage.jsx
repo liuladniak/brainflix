@@ -21,7 +21,7 @@ function HomePage() {
         setVideos(response.data);
         setIsLoading(false);
       } catch (err) {
-        console.log(err.message, err);
+        console.error(err.message, err);
       }
     };
     getVideos();

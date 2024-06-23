@@ -2,16 +2,10 @@ import "./VideoCard.scss";
 import { Link } from "react-router-dom";
 import Video from "../Video/Video";
 
-function VideoCard({ video, videoData }) {
-  let videoNavCssClass = "video-card";
-
-  if (video.id === videoData) {
-    videoNavCssClass += " video-card--selected";
-  }
-
+function VideoCard({ video }) {
   return (
     <li>
-      <Link className={videoNavCssClass} to={`/videos/${video.id}`}>
+      <Link className="video-card" to={`/videos/${video.id}`}>
         <div className="video-card__media-wrp">
           <Video
             className="video-card__video"
